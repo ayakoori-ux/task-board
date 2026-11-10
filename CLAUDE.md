@@ -15,6 +15,7 @@
 ```
 task-board/         # プロジェクトルート
 ├── CLAUDE.md       # このファイル
+├── .nojekyll       # GitHub Pages で Jekyll 処理を無効化する空ファイル
 ├── index.html      # エントリーポイント（CDN 読み込みとマウント先 #root）
 ├── css/style.css   # スタイル
 └── js/app.jsx      # アプリ本体（TaskForm / TaskItem / App）
@@ -26,6 +27,12 @@ task-board/         # プロジェクトルート
 - VS Code の Live Server などでローカルサーバーを立てて `index.html` を開いてください。
   - 例（プロジェクトルートで実行）: `npx serve .` または `python -m http.server`
 - ビルド・テスト・Lint の仕組みは現状ありません。変更後はブラウザで追加・完了切替・削除・リロード後の保持を確認します。
+
+## 公開（GitHub Pages）
+
+- `main` ブランチのルート（`/`）を GitHub Pages で配信する。ビルド不要で、プッシュすると数分で反映される。
+- 公開 URL: https://ayakoori-ux.github.io/task-board/
+- サブパス（`/task-board/`）で配信されるため、ローカルファイルは必ず相対パス（`css/style.css` など）で参照する。先頭に `/` を付けた絶対パスは使わない。
 
 ## コーディング規約
 
